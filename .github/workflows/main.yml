@@ -14,9 +14,8 @@ jobs:
         python-version: '3.x'
     - name: Build data
       run: |
-        pip3 install requests numpy matplotlib
+        pip3 install requests numpy matplotlib beautifulsoup4
         python3 --version
-        ps -e
         python3 scripts/get_data.py
     - name: Commit & Push
       uses: actions-x/commit@v6
