@@ -27,7 +27,7 @@ for extension in extensions:
     try:
         amourl = f"https://addons.mozilla.org/en-US/firefox/addon/{extension.lower().replace(" ", "-")}/"
         amoreq = requests.get(amourl)
-        reqtext = amoreq.text
+        reqtext = amoreq[0].text
         amosoup = BeautifulSoup(reqtext, 'html.parser')
         usercount_elm = amosoup.select(".MetadataCard-content")
         usercount = int(usercount_elm.text.replace(","))
