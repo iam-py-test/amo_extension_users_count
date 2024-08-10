@@ -20,7 +20,7 @@ def dict_as_arr(dic):
     return arr
 
 try:
-    os.mkdir("img")
+    os.mkdir("imgs")
 except:
     pass
 try:
