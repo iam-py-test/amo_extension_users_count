@@ -30,7 +30,7 @@ for extension in extensions:
         reqtext = amoreq.text
         amosoup = BeautifulSoup(reqtext, 'html.parser')
         usercount_elm = amosoup.select(".MetadataCard-content")[0]
-        usercount = int(usercount_elm.text.replace(","))
+        usercount = int(usercount_elm.text.replace(",", ""))
         if extension not in usercountdata:
             usercountdata[extension] = {}
         usercountdata[extension][current_date] = usercount
