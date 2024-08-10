@@ -57,7 +57,7 @@ for extension in extensions:
     formatted_extension_name = extension.lower().replace(" ", "-")
     if extension not in usercountdata:
         continue
-    x = np.arange(1,len(usercountdata[extension]))
+    x = np.arange(1,len(usercountdata[extension]) + 1)
     y = np.array(dict_as_arr(usercountdata[extension]))
     plt.title(f"Number of users for {extension}")
     plt.xlabel("Time")
