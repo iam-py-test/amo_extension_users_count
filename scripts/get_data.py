@@ -53,5 +53,5 @@ for extension in extensions:
     plt.xlabel("Time")
     plt.ylabel("Users")
     plt.plot(x, y, color = "green")
-    plt.savefig(f"imgs/{extension}")
+    plt.savefig(f"imgs/{extension}.png")
     plt.clf()
