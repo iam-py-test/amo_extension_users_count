@@ -34,8 +34,8 @@ for extension in extensions:
         if extension not in usercountdata:
             usercountdata[extension] = {}
         usercountdata[extension][current_date] = usercount
-    except:
-        pass
+    except Exception as err:
+        print(extension, err)
 
 outcountfile = open('data/usercount.json', 'w')
 outcountfile.write(json.dumps(usercountdata))
