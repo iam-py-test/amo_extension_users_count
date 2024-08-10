@@ -45,7 +45,7 @@ outcountfile.close()
 
 for extension in extensions:
     formatted_extension_name = extension.lower().replace(" ", "-")
-    if formatted_extension_name not in usercountdata:
+    if extension not in usercountdata:
         continue
     x = np.arange(1,len(usercountdata[formatted_extension_name]))
     y = np.array(usercountdata[formatted_extension_name])
