@@ -27,9 +27,9 @@ for extension in extensions:
     try:
         amourl = f"https://addons.mozilla.org/en-US/firefox/addon/{extension.lower().replace(" ", "-")}/"
         amoreq = requests.get(amourl)
-        reqtext = amoreq[0].text
+        reqtext = amoreq.text
         amosoup = BeautifulSoup(reqtext, 'html.parser')
-        usercount_elm = amosoup.select(".MetadataCard-content")
+        usercount_elm = amosoup[0].select(".MetadataCard-content")
         usercount = int(usercount_elm.text.replace(","))
         if extension not in usercountdata:
             usercountdata[extension] = {}
