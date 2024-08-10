@@ -9,6 +9,16 @@ import matplotlib.colors as allowedcolors
 extensions = ['uBlock Origin']
 current_date = datetime.datetime.now().strftime("%d/%m/%Y")
 
+def dict_as_arr(dic):
+    """
+    Return the items in a dict as a list (called an array here, don't sue me)
+    I am sure there is a better way
+    """
+    arr = []
+    for item in dic:
+        arr.append(dic[item])
+    return arr
+
 try:
     os.mkdir("img")
 except:
@@ -48,7 +58,7 @@ for extension in extensions:
     if extension not in usercountdata:
         continue
     x = np.arange(1,len(usercountdata[extension]))
-    y = np.array(usercountdata[extension])
+    y = np.array(dict_as_arr(usercountdata[extension]))
     plt.title(f"Number of users for {extension}")
     plt.xlabel("Time")
     plt.ylabel("Users")
