@@ -1,4 +1,4 @@
-import os, sys, json
+import os, sys, json, datetime
 
 import requests
 from bs4 import BeautifulSoup
@@ -8,6 +8,15 @@ import matplotlib.colors as allowedcolors
 
 extensions = ['uBlock Origin']
 current_date = datetime.datetime.now().strftime("%d/%m/%Y")
+
+try:
+    os.mkdir("img")
+except:
+    pass
+try:
+    os.mkdir("data")
+except:
+    pass
 
 try:
     usercountdata = json.loads(open('data/usercount.json').read())
