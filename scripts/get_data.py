@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as allowedcolors
 
-extensions = ['uBlock Origin', "AdGuard AdBlocker", "Adblock Plus", "SponsorBlock", "Ghostery", "AdBlock for Firefox"]
+extensions = ['uBlock Origin', "AdGuard AdBlocker", "Adblock Plus", "SponsorBlock", "Ghostery", "AdBlock for Firefox", "uBlock Origin Lite"]
 current_date = datetime.datetime.now().strftime("%d/%m/%Y")
 
 def dict_as_arr(dic):
