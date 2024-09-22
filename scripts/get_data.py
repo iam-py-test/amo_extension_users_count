@@ -37,6 +37,8 @@ for extension in extensions:
     try:
         amourl = f"https://addons.mozilla.org/en-US/firefox/addon/{extension.lower().replace(" ", "-")}/"
         amoreq = requests.get(amourl)
+        if amoreq.status_code == 404:
+            continue
         reqtext = amoreq.text
         amosoup = BeautifulSoup(reqtext, 'html.parser')
         usercount_elm = amosoup.select(".MetadataCard-content")[0]
