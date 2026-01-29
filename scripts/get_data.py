@@ -41,8 +41,8 @@ for extension in extensions:
             continue
         reqtext = amoreq.text
         amosoup = BeautifulSoup(reqtext, 'html.parser')
-        usercount_elm = amosoup.select(".MetadataCard-content")[0]
-        usercount = int(usercount_elm.text.replace(",", ""))
+        usercount_elm = amosoup.select("[data-testid=\"badge-user-fill\"]")[0]
+        usercount = int(usercount_elm.text.replace(",", "").replace(" Users", ""))
         if extension not in usercountdata:
             usercountdata[extension] = {}
         usercountdata[extension][current_date] = usercount
@@ -67,3 +67,4 @@ for extension in extensions:
     plt.plot(x, y, color = "green")
     plt.savefig(f"imgs/{extension}.png")
     plt.clf()
+
