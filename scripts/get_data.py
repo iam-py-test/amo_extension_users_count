@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as allowedcolors
 
-extensions = ['uBlock Origin', "AdGuard AdBlocker", "Adblock Plus", "SponsorBlock", "Ghostery", "AdBlock for Firefox", "uBlock Origin Lite", "NoScript", "uMatrix", "uBO-Scope", "AdGuard Browser Assistant", "AdGuard VPN"]
+extensions = ['uBlock Origin', "AdGuard AdBlocker", "Adblock Plus", "SponsorBlock", "Ghostery", "AdBlock for Firefox", "uBlock Origin Lite", "NoScript", "uMatrix", "uBO-Scope", "AdGuard Browser Assistant", "AdGuard VPN", "Unlock", "One Click Archive Today", "Archive Page", "archive-it-today"]
 current_date = datetime.datetime.now().strftime("%d/%m/%Y")
 
 def dict_as_arr(dic):
@@ -67,5 +67,6 @@ for extension in extensions:
     plt.plot(x, y, color = "green")
     plt.savefig(f"imgs/{extension}.png")
     plt.clf()
+
 
 
